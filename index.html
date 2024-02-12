@@ -1,0 +1,77 @@
+<h3>TO - DO LIST</h3>
+<input id="get" >
+<button onclick="add()">Add</button>
+<ul id="list-container"></ul>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+ body {
+        background-color: black;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input {
+        height: 30px;
+        width: 300px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #222;
+        color: white;
+    }
+    input:focus {
+        outline: none;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #444;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        color: aliceblue;
+    }
+    li {
+        margin-bottom: 10px;
+        color:white;
+    }
+</style>
+
+<script>
+    var out = document.getElementById("get")
+    var ul = document.getElementById("list-container")
+    function add(){
+        var list = document.createElement("li")
+        console.log(out);
+        list.innerHTML=out.value +  "  <button onClick ='del(event)'> Delete</button>"
+        ul.append(list)
+    }
+    function del(event){
+        event.target.parentElement.remove()
+    }
+    
+</script>
